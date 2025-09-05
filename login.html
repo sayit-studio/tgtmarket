@@ -8,9 +8,12 @@ async function main() {
     const profile = await liff.getProfile();
     const userId = profile.userId;
 
-    // ✅ 把 userId 傳到 Notion 表單
-    window.location.href = `https://tally.so/r/abc123?userId=${encodeURIComponent(userId)}`;
+    const userId = profile.userId;
+    fetch(`https://sayitstudio.zeabur.app/webhook-test/new_member`);
+    // 接著自動跳轉到 Notion 表單
+    window.location.href = 'https://wusproject.notion.site/262b3ad1d1cd806ca5b1f0069dea0cef?pvs=105';
   }
 }
 main();
 </script>
+
