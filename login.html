@@ -1,0 +1,16 @@
+<script>
+async function main() {
+  await liff.init({ liffId: "你的_LIFF_ID" });
+
+  if (!liff.isLoggedIn()) {
+    liff.login();
+  } else {
+    const profile = await liff.getProfile();
+    const userId = profile.userId;
+
+    // ✅ 把 userId 傳到 Notion 表單
+    window.location.href = `https://tally.so/r/abc123?userId=${encodeURIComponent(userId)}`;
+  }
+}
+main();
+</script>
